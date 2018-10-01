@@ -184,6 +184,9 @@ export const CANNOT_BE_VALIDATE = 'CANNOT_BE_VALIDATED';
 export const INFO_LAST_VERSION = 'amp-activity-last-version-id';
 export const INFO_ACTIVITY_ID = 'amp-activity-id';
 export const ANCESTOR_VALUES = 'ancestor-values';
+export const VERSION_HISTORY = 'version-history';
+export const MODIFIED_BY_INFO = 'modified-by';
+export const MODIFIED_DATE = 'modified-date';
 
 //FUNDING
 export const FUNDING_INFORMATION = 'funding_information';
