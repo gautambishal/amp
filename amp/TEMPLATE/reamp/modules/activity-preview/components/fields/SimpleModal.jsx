@@ -12,6 +12,7 @@ export default class SimpleModal extends Component {
     this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this);
     this.handleCompare = this.handleCompare.bind(this);
     this.handleHistory = this.handleHistory.bind(this);
+    this.handleUpdateVersion = this.handleUpdateVersion.bind(this);
     
     this.state = {
       show: false,
@@ -43,7 +44,7 @@ export default class SimpleModal extends Component {
         activityId: this.state.activityId
     };
 
-    this.submitPostForm('/aim/compareActivityVersions.do', data);
+    this.submitPostForm('/aim/compareActivityVersions.do', data, '_blank');
   }
 
   handleHistory(event) {
@@ -53,13 +54,25 @@ export default class SimpleModal extends Component {
         activityId: this.state.activityId
     };
 
-    this.submitPostForm('/aim/viewActivityHistory.do', data);
+    this.submitPostForm('/aim/viewActivityHistory.do', data, '_blank');
 
   }
 
-  submitPostForm(url, data) {
+  handleUpdateVersion(event, newVersionId){
+    event.preventDefault();
+    const data = {
+        action: 'setVersion',
+        method: 'compare',
+        activityCurrentVersion : newVersionId
+    };
+
+    this.submitPostForm('/aim//compareActivityVersions.do', data, '_self');
+
+  }
+
+  submitPostForm(url, data, target) {
     var form = document.createElement("form");
-    form.target = "_blank";
+    form.target = target;
     form.method = "POST";
     form.action = url;
     form.style.display = "none";
@@ -103,6 +116,11 @@ export default class SimpleModal extends Component {
         let actionLabel = ('');
         if (activityId === activityInfo[AC.INFO_LAST_VERSION]) {
             actionLabel = (translations['current_version']);
+        } else if (activityInfo[AC.UPDATE_CURRENT_VERSION]) {
+            actionLabel = (
+                <Button className={'link_version'} bsStyle="link" bsSize="xsmall" onClick={(evt) => this.handleUpdateVersion(evt, activityId)}>
+                    {translations['make_current_version']}
+                </Button>);
         }
         row.push(<tr key={'Row_' + activityId}>
             <td>
@@ -114,7 +132,7 @@ export default class SimpleModal extends Component {
             </td>
             <td>{activityInfo[AC.VERSION_HISTORY][id][AC.MODIFIED_BY_INFO]}</td>
             <td>{activityInfo[AC.VERSION_HISTORY][id][AC.MODIFIED_DATE]}</td>
-            <td>{actionLabel}</td>
+            <td className='preview_container'>{actionLabel}</td>
         </tr>);
     }
     return (

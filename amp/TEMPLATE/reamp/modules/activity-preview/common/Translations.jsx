@@ -61,6 +61,7 @@ export const initialTranslations = {
         'click_latest_version' : 'Click here to show the latest version',
         'delivery_rate': 'Delivery Rate',
         'undisbursed_balance': 'Undisbursed Balance',
+        'total_undisbursed_balance': 'Total Undisbursed Balance',
         'draft_activity': 'This is a draft activity',
         'subtotal':'Subtotal',
         'total' : 'Total',
@@ -80,6 +81,7 @@ export const initialTranslations = {
         'compare_versions': 'Compare Versions',
         'show_change_summary' : 'Show Change Summary',
         'close':'Close',
-        'current_version' : "Current Version"
+        'current_version' : "Current Version",
+        'make_current_version' : 'Make this the current version'
         
 };

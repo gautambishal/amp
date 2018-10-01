@@ -187,6 +187,7 @@ export const ANCESTOR_VALUES = 'ancestor-values';
 export const VERSION_HISTORY = 'version-history';
 export const MODIFIED_BY_INFO = 'modified-by';
 export const MODIFIED_DATE = 'modified-date';
+export const UPDATE_CURRENT_VERSION = 'update-current-version';
 
 //FUNDING
 export const FUNDING_INFORMATION = 'funding_information';
