@@ -19,7 +19,7 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 11px;
   margin: 0px 8px;
-  cursor: pointer; 
+  cursor: pointer;
   color:#376091;
 }
 
@@ -57,7 +57,7 @@
   font-family: 'Arial', sans-serif;
   font-size: 11px;
   color: #405473;
-  cursor: pointer; 
+  cursor: pointer;
   padding-right: 5px;
 }
 
@@ -420,7 +420,7 @@
 }
 
 .row {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 
 .right_text {
