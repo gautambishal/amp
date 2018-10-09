@@ -680,6 +680,12 @@
     list-style-position: inside;
 }
 
+.alert {
+    border-color: transparent !important;
+    border-radius: 0 !important;
+    margin-left: 10px;
+}
+
 .alert li {
     list-style: none !important;
 }
