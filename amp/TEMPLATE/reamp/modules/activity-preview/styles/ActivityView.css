@@ -602,8 +602,9 @@
     text-align: left;
     width: 50%;
     margin-bottom: 15px;
+    padding: 5px;
     padding-left: 20px;
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
     color: #767676;
 }
 
@@ -613,11 +614,11 @@
     font-weight: bold;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
-    width: 50%;
     text-align: right;
+    width: 50%;
+    margin-bottom: 15px;
     padding: 5px;
     padding-right: 120px;
-    margin-bottom: 15px;
 }
 
 .header {
