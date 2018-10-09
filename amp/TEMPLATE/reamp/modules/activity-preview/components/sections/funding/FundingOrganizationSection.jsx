@@ -63,9 +63,7 @@ class FundingOrganizationSection extends Component {
 
   render() {
     return (<div>
-      <div className={'section_header'}> {this.props.translations['amp.activity-preview:fundingItem']} 
-        {this.props.counter} 
-      </div>
+      <div className={'section_header'} />
       <table className={'two_box_table'}>
         <tbody>{this._buildDonorInfo()}</tbody>
       </table>

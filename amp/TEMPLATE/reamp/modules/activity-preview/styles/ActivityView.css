@@ -419,6 +419,11 @@
     font-weight: bold;
 }
 
+.funding_table .row {
+    background-color: #f8f8f8;
+    height: 30px;
+}
+
 .row {
     /* background-color: #f8f8f8; */
 }
@@ -641,7 +646,7 @@
 }
 
 .container_funding {
-    max-width: 675px;
+    /*max-width: 675px;*/
     min-width: 675px;
 }
 
