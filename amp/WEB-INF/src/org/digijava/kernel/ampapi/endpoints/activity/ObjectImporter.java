@@ -320,6 +320,10 @@ public class ObjectImporter {
             throw new RuntimeException("Can't handle a collection of ID-linked objects yet!");
         }
         if (InterchangeUtils.isSimpleType(objectType)) {
+            // original behavior was that if a field was numeric then it was converted to long
+            if (value instanceof Number) {
+                value = ((Number) value).longValue();
+            }
             return value;
         } else {
             return InterchangeUtils.getObjectById(objectType, Long.valueOf(value.toString()));
