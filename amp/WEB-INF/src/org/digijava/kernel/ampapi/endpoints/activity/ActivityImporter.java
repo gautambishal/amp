@@ -225,9 +225,11 @@ public class ActivityImporter extends ObjectImporter {
                 
                 newActivity = AuditActivityInfo.doInTeamMemberContext(teamMember, () -> {
                     try {
-                        return org.dgfoundation.amp.onepager.util.ActivityUtil.saveActivityNewVersion(newActivity,
+                        AmpActivityVersion ampActivityVersion = org.dgfoundation.amp.onepager.util.ActivityUtil.saveActivityNewVersion(newActivity,
                                 translations, teamMember, Boolean.TRUE.equals(newActivity.getDraft()),
                                 PersistenceManager.getSession(), SaveContext.api(updateApprovalStatus));
+                        PersistenceManager.getSession().flush();
+                        return ampActivityVersion;
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
